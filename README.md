@@ -3,6 +3,23 @@
 The main idea is to create the PHP (at this point) websites which will work as **isolated "users"**.
 We're using PHP-FPM and `fastcgi_pass`-ing the requests to the *separate* php-fpm-sockets, running as separate users.
 
+### Usage:
+
+`./create-website.sh`
+
+Or if the file hasn't become executable on your side, run it with `bash`:
+
+`bash create-website.sh`
+
+It will ask you just 2 things: _username_ and website's _domain name_
+
+In order to use the prepared templates for some CMSs, just start the script (it should be a symlink) from the folder e.g. 'bitrix':
+
+`cd bitrix && ./create-website.sh`
+
+
+### Description
+
 The permissions model is as follows:
 * a Unix user is created for every website (e.g. 'website1')
 * a primary Unix group (with the same name - 'website1') is also created for it
