@@ -53,12 +53,12 @@ usermod -a -G $USERNAME $NGINX_USER
 # create folders for websites
 echo ".. creating folders for website"
 mkdir /home/$USERNAME/public_html
-chown $USERNAME:$NGINX_USER /home/$USERNAME/public_html
+chown $USERNAME:$USERNAME /home/$USERNAME/public_html
 chmod 750 /home/$USERNAME/public_html
 
 mkdir /home/$USERNAME/private_html
 chown $USERNAME:$USERNAME /home/$USERNAME/private_html
-chmod 750 /home/$USERNAME/private_html
+chmod 700 /home/$USERNAME/private_html
 
 
 # create an nginx config-file
