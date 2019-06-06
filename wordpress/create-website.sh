@@ -1,1 +1,3 @@
-../create-website.sh
+#!/bin/bash
+
+bash ../create-website.sh

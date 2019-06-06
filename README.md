@@ -32,13 +32,16 @@ The following folders are created in e.g. `/home/website1` for placing the websi
 * 'private_html' with `website1:website1` ownership and 700 mode, so that only the web-app could get there, and keep some configuration files or backups for example
 * only the 'public_html' folder becomes the www-root for the website
 
+As for the OS-level configuration:
+* if the directory /var/log/php doesn't exist, it's created
+
 
 There are some examples for different CMSs available, each one in its folder here, symlinking to the main script.
 Feel free to fine-tune them for your case.
 
 
 TODO:
-* ! check if the log-path for PHP exists; currently on the clean system restarting the php-fpm service might fail, as /var/log/php/ doesn't exist by default
+* ! check if php-pools path exists, also the systemctl service; before starting the script
 * check if the user or group already exists, the same for paths/folders
 * make the non-interactive mode, to call the scripts and make them do everything automatically and optionally silently
 * add calling of LetsEncrypt (if it's installed) after creating the website
