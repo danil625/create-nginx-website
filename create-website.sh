@@ -9,6 +9,7 @@ NGINX_ENABLED_DIR='/etc/nginx/sites-enabled'
 PHP_POOL_DIR="/etc/php/${PHP_VERSION}/fpm/pool.d"
 NGINX_RELOAD='systemctl reload nginx.service'
 PHP_FPM_RESTART="systemctl restart php${PHP_VERSION}-fpm.service"
+USER_SHELL="/bin/false"
 
 #=====================================================================
 
@@ -46,7 +47,7 @@ if [ ! $? -eq 0 ]; then
 fi
 
 echo ".. creating user"
-useradd -m -b $HOME_BASE -g $USERNAME $USERNAME
+useradd -m -b $HOME_BASE -g $USERNAME -s $USER_SHELL $USERNAME
 echo ".. adding user www-data to new group"
 usermod -a -G $USERNAME $NGINX_USER
 
