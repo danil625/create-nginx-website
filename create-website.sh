@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HOME_BASE="/home"
-PHP_VERSION="7.2"
+PHP_VERSION="7.3"
 
 NGINX_USER='www-data'
 NGINX_SITES_DIR='/etc/nginx/sites-available'
